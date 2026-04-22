@@ -10,7 +10,7 @@ import java.util.List;
  */
 public abstract class Bag {
 
-    private List<Tile> tiles;
+    private List<Tile> tiles; // need to initialize
 
 
     /**
@@ -20,6 +20,8 @@ public abstract class Bag {
     public void add(Tile tile) {
         tiles.add(tile);
     }
+
+    // null pointer exception??
 
 
     /**
