@@ -45,7 +45,8 @@ public class PriorityBag extends Bag{
             }
         }
 
-        int randInt = rand.nextInt(tempList.size() - 1) + 1; // why do we chooose to skip the first tile
+        System.out.println(tempList.size());
+        int randInt = rand.nextInt(tempList.size()); 
 
         tiles.remove(tempList.get(randInt));
 
