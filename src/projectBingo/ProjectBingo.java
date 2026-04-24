@@ -6,10 +6,32 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProjectBingo {
-    private static Bag bag;
+
+    private GoalLoader goalLoader;
+    private Bag bag;
+    private Board board;
+
     public static void main(String[] args) {
+        ProjectBingo projectBingo = new ProjectBingo();
+        projectBingo.run();
+    }
+
+    public ProjectBingo () {
+    }
+
+    public void run() {
+        loadBags();
         
-        GoalLoader goalLoader = new GoalLoader();
+        board = new Board(bag);
+        board.print();
+
+
+        
+
+    }
+
+    private void loadBags() {
+        goalLoader = new GoalLoader();
 
         Scanner scanner = new Scanner(System.in);
         List<Tile> goals = new ArrayList<>();
@@ -32,29 +54,11 @@ public class ProjectBingo {
                 break;
             }
         }
-        
-        Board board = new Board(bag);
-
-        board.print();
-
-        List<HotKey> hotKeys = new ArrayList<>();
-        for(int i = 1; i < 6; i++) {
-            for(int j = 1; j < 6; j++) {
-                for(int k = 0; k < 3; k++) {
-                    //ijk
-                    hotKeys.add(new HotKey(((Integer)i).toString() + ((Integer)j).toString() + ((Integer)k).toString(), 
-                        () -> {
-                            Board.getTile(i,j); //TODO: fix me
-                        }
-                    ));
-                }
-            }
-        }
-
-
-
-
 
         scanner.close();
     }
+
+    
+    
+
 }

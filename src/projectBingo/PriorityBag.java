@@ -45,7 +45,6 @@ public class PriorityBag extends Bag{
             }
         }
 
-        System.out.println(tempList.size());
         int randInt = rand.nextInt(tempList.size()); 
 
         tiles.remove(tempList.get(randInt));
