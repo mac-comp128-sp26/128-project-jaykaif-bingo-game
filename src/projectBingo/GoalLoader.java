@@ -15,6 +15,7 @@ public class GoalLoader {
      * @return List of Tile objects paprsed from the
      */
     public List<Tile> loadFromCSV (String filePath){
+        filePath = "C:\\Users\\mirma\\Documents\\Macalester Files\\COMP 128\\Project-Bingo\\res" + filePath;
         List<Tile> tiles = new ArrayList<>();
 
         try(BufferedReader reader = new BufferedReader(new FileReader(filePath))){

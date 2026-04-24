@@ -10,6 +10,7 @@ public class ProjectBingo {
     private GoalLoader goalLoader;
     private Bag bag;
     private Board board;
+    private Gui gui;
 
     public static void main(String[] args) {
         ProjectBingo projectBingo = new ProjectBingo();
@@ -20,6 +21,10 @@ public class ProjectBingo {
     }
 
     public void run() {
+
+        gui = new Gui();
+
+
         loadBags();
         
         board = new Board(bag);
