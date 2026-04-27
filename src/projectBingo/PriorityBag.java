@@ -36,6 +36,7 @@ public class PriorityBag extends Bag{
      * @return the next Tile
      */
     public Tile remove() {
+        //TODO: make this remove method more efficent. idk how really
         List<Tile> tempList = new ArrayList<>();
         Random rand = new Random();
 

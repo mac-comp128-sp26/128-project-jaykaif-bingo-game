@@ -5,12 +5,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.events.MouseButtonEvent;
+import edu.macalester.graphics.events.MouseButtonEventHandler;
+
 public class ProjectBingo {
 
     private GoalLoader goalLoader;
     private Bag bag;
     private Board board;
     private Gui gui;
+    private CanvasWindow canvas;
 
     public static void main(String[] args) {
         ProjectBingo projectBingo = new ProjectBingo();
@@ -22,7 +27,8 @@ public class ProjectBingo {
 
     public void run() {
 
-        gui = new Gui();
+        canvas = new CanvasWindow("Bingo", 750, 750);
+        gui = new Gui(canvas);
 
 
         loadBags();
@@ -30,9 +36,19 @@ public class ProjectBingo {
         board = new Board(bag);
         board.print();
 
-
         
+        while (true) { 
+            //TODO: make the onclick events work better
+            canvas.onClick(new MouseButtonEventHandler() {
+                @Override
+                public void handleEvent(MouseButtonEvent event) {
+                    int x = (int) Math.floor((event.getPosition().getX()-125) / 100);
+                    int y = (int) Math.floor((event.getPosition().getY()-125) / 100);
 
+                    gui.drawTile(x, y, bag.remove());
+                }
+            });
+        }
     }
 
     private void loadBags() {

@@ -59,6 +59,7 @@ public class Board {
      * @return returns 1 if player 1 won, 2 if player 2 won, 0 if neither won
      */
     public int detectWin() {
+        //TODO: bitboard implementation?
         if (detectEqualness(matrix[0][0].getCompletionState(), matrix[1][1].getCompletionState(), matrix[2][2].getCompletionState(), matrix[3][3].getCompletionState(), matrix[4][4].getCompletionState())) {
             return matrix[0][0].getCompletionState();
         }
