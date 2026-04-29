@@ -56,7 +56,22 @@ public class Gui {
         text.setAlignment(TextAlignment.CENTER);
         text.setFontSize(20);
 
-        
+        canvas.add(text);  
+    }
+
+    /**
+     * Displays a win message overlay on the canvas
+     * @param player the winning player (1 or 2)
+     */
+    public void showWinner(int player){
+        Rectangle overlay = new Rectangle(125,300, 500, 120);
+        overlay.setFillColor(player == 1 ? Color.CYAN : Color.RED);
+        canvas.add(overlay);
+
+        GraphicsText message = new GraphicsText("Player" + player + " wins!", 375,375);
+        message.setFontSize(48);
+        message.setAlignment(TextAlignment.CENTER);
+        canvas.add(message);
     }
 
     
