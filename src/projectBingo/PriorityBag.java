@@ -37,19 +37,23 @@ public class PriorityBag extends Bag{
      */
     public Tile remove() {
         //TODO: make this remove method more efficent. idk how really
-        List<Tile> tempList = new ArrayList<>();
-        Random rand = new Random();
+
+        int totalPrio = 0;
 
         for (Tile tile : tiles) {
-            for (int i = 0; i < tile.getPriority(); i++) {
-                tempList.add(tile);
+            totalPrio += tile.getPriority();
+        }
+        Random rand = new Random();
+
+        int randInt = rand.nextInt(totalPrio); 
+
+        for (Tile tile : tiles) {
+            randInt -= tile.getPriority();
+            if (randInt <= 0) {
+                tiles.remove(tile);
+                return tile;
             }
         }
-
-        int randInt = rand.nextInt(tempList.size()); 
-
-        tiles.remove(tempList.get(randInt));
-
-        return tempList.get(randInt);
+        return null;
     }
 }

@@ -16,7 +16,6 @@ public class ProjectBingo {
     private Board board;
     private Gui gui;
     private CanvasWindow canvas;
-    private int currentPlayer = 1;
 
     public static void main(String[] args) {
         ProjectBingo projectBingo = new ProjectBingo();
@@ -52,12 +51,17 @@ public class ProjectBingo {
                 // ignore clicks if outside grid:
                 if(x<0 || x > 4 || y < 0 || y > 4) return;
 
-                Tile tile = board.getTile(y, x);
+                Tile tile = board.getTile(y,x);
 
                 //ignore click if tile claimed already
                 if(tile.getCompletionState() != 0) return;
 
-                tile.setCompletionState(currentPlayer);
+                if(event.getModifiers().isEmpty()) {
+                tile.setCompletionState(1);
+                } else {
+                tile.setCompletionState(2);
+                }
+
                 gui.drawTile(x, y, tile);
 
                 int winner = board.detectWin();
@@ -65,8 +69,6 @@ public class ProjectBingo {
                     gui.showWinner(winner);
                     return;
                 }
-
-                currentPlayer = (currentPlayer == 1) ? 2: 1;
             }
         });
     }

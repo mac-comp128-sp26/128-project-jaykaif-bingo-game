@@ -27,6 +27,7 @@ public class GoalLoader {
                 if(line.isEmpty()) continue;
 
                 String[] parts = line.split(",", 3); // max 3 splits - parts[0] = goal, parts[1] = priority, parts[2] = category.
+
                 if(parts.length < 2) continue;
 
                 String goal = parts[0].trim().replace("\"", "");
