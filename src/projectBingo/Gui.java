@@ -57,6 +57,7 @@ public class Gui {
         text.setFontSize(20);
 
         canvas.add(text);  
+        canvas.draw();
     }
 
     /**
