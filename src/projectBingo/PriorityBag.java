@@ -1,6 +1,5 @@
 package projectBingo;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -36,8 +35,6 @@ public class PriorityBag extends Bag{
      * @return the next Tile
      */
     public Tile remove() {
-        //TODO: make this remove method more efficent. idk how really
-
         int totalPrio = 0;
 
         for (Tile tile : tiles) {
