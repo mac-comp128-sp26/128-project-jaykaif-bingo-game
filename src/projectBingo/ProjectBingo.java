@@ -33,8 +33,7 @@ public class ProjectBingo {
 
         loadBags();
         
-        board = new Board(bag);
-        board.print();
+        board = new BitboardBoard(bag);
 
         for(int row = 0; row < 5; row++){
             for(int col = 0; col < 5; col++) {
@@ -61,6 +60,7 @@ public class ProjectBingo {
                 } else {
                 tile.setCompletionState(2);
                 }
+                board.update(y,x);
 
                 gui.drawTile(x, y, tile);
 

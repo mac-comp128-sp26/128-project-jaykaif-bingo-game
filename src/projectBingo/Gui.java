@@ -51,7 +51,6 @@ public class Gui {
         canvas.add(square);
 
         //set title
-        //TODO: ensure that the scaling of the text is always correct
         GraphicsText text = new GraphicsText(tile.getGoal(),175 + 100*x,150 + 100*y);
         text.setAlignment(TextAlignment.CENTER);
         text.setFontSize(20);

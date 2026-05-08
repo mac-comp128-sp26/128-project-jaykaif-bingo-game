@@ -10,8 +10,7 @@ import java.util.List;
  */
 public abstract class Bag {
 
-    private List<Tile> tiles; // need to initialize
-
+    private List<Tile> tiles; 
 
     /**
      * Adds a tile to the bag
