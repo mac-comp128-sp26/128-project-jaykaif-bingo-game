@@ -23,7 +23,7 @@ public class ClassicBoard extends Board {
         for (int i = 0; i < 25; i++) {
             temp.add(bag.remove());
         }
-        Collections.shuffle(temp);
+        Collections.shuffle(temp); //this shuffle is needed for priority queue
 
         int index = 0;
         for (int i = 0; i < 5; i++) {

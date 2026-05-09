@@ -68,7 +68,7 @@ public class Gui {
         overlay.setFillColor(player == 1 ? Color.CYAN : Color.RED);
         canvas.add(overlay);
 
-        GraphicsText message = new GraphicsText("Player" + player + " wins!", 375,375);
+        GraphicsText message = new GraphicsText("Player " + player + " wins!", 375,375);
         message.setFontSize(48);
         message.setAlignment(TextAlignment.CENTER);
         canvas.add(message);

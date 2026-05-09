@@ -39,7 +39,7 @@ public class BitboardBoard extends Board {
         for (int i = 0; i < 25; i++) {
             tiles[i] = bag.remove();
         }
-        Collections.shuffle(Arrays.asList(this.tiles));
+        Collections.shuffle(Arrays.asList(this.tiles)); //this shuffle is needed for priority queue
     }
 
     /**
